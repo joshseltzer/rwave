@@ -12,27 +12,14 @@ library(tuneR)
 library(seewave)
 
 # OPTIONS
-setwd("~/OWL/Data/MANUAL_LABEL_DATA")
+setwd("~/OWL/Data/SWIFT/SWIFT1/SWIFT1_2019-04-21")
 freq = 48000
 minHZ = 100
 maxHZ = 800
 
 # FILENAMES TO PROCESS
-filenames <- c(
-  "SWIFT12_20190419_000000.wav",
-  "SWIFT12_20190419_010000.wav",
-  "SWIFT12_20190419_020001.wav",
-  "SWIFT12_20190419_030001.wav",
-  "SWIFT12_20190419_040002.wav",
-  "SWIFT12_20190419_050003.wav",
-  "SWIFT12_20190419_060003.wav",
-  "SWIFT12_20190419_180000.wav",
-  "SWIFT12_20190419_190000.wav",
-  "SWIFT12_20190419_200001.wav",
-  "SWIFT12_20190419_210001.wav",
-  "SWIFT12_20190419_220002.wav",
-  "SWIFT12_20190419_230002.wav"
-)
+filenames <- list.files(pattern = "\\.wav$", ignore.case=TRUE)
+cat("Scanning files:", filenames)
 
 # PROCESS FILES
 for (fn in filenames) {
